@@ -53,13 +53,13 @@ reg [31:0] counter;
 
 assign InData_W =  InData;
 
-// assign temp_buf = temperature & 16'h07FF;
-// assign temp[3:0]  = (temp_buf[3:0] * 10) >> 4;
-// assign temp[7:4] = (((temp_buf[7:4] * 10) >> 4) >= 4'd10) ? (((temp_buf[7:4] * 10) >> 4) - 'd10) : ((temp_buf[7:4] * 10) >> 4);
-// assign temp[11:8] = (((temp_buf[7:4] * 10) >> 4) >= 4'd10) ? (((temp_buf[11:8] * 10) >> 4) + 'd1) + 'd2 : ((temp_buf[11:8] * 10) >> 4) + 'd2;
+ assign temp_buf = temperature & 16'h07FF;
+ assign temp[3:0]  = (temp_buf[3:0] * 10) >> 4;
+ assign temp[7:4] = (((temp_buf[7:4] * 10) >> 4) >= 4'd10) ? (((temp_buf[7:4] * 10) >> 4) - 'd10) : ((temp_buf[7:4] * 10) >> 4);
+ assign temp[11:8] = (((temp_buf[7:4] * 10) >> 4) >= 4'd10) ? (((temp_buf[11:8] * 10) >> 4) + 'd1) + 'd2 : ((temp_buf[11:8] * 10) >> 4) + 'd2;
 
-assign temp[3:0] = temperature[7:4];
-assign temp[7:4] = temperature[11:8];
+//assign temp[3:0] = temperature[7:4];
+//assign temp[7:4] = temperature[11:8];
 
 assign temp[15:12] = temperature[12] ? 1 : 0;
 
